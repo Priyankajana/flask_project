@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOG IN</title>
+    <link href="{{url_for('static',filename='images/nav.png')}}" rel="icon">
+    <style>
+        
+    </style>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        body{
+            background: url('../static/images/hero-bg.jpg');
+            background-size: cover ;
+        }
+
+        .navbar{
+            background-color: rgba(102, 96, 96, 0.918);
+            border-radius: 10px;
+        }
+        .navbar ul{
+            overflow: auto;
+        }
+        .navbar li{
+            float: left;
+            list-style: none;
+            margin: 5px 5px;
+            padding-top: 2px;
+        }
+        .navbar li a{
+            padding: 2px 145px;
+            text-decoration: none;
+            color:white;
+        }
+        .navbar li a:hover{
+            color: rgb(7, 9, 12);
+        }
+        .login{
+            width: 350px;
+            top: 50%;
+            left: 50%;
+            transform: translate( -50%, -50%);
+            position: absolute;
+            color: black;
+        }
+        .login h3{
+            text-align: center;
+        }
+        .login h1{
+            font-size: 40px ;
+            text-align: center;
+            text-transform: uppercase ;
+            margin: 40px 0;
+            color:black;
+        }
+        .login p{
+            font-size: 20px;
+            text-align: center;
+            margin: 15px 2px;
+
+        }
+        .login input{
+            font-size: 16px;
+            width: 100%;
+            padding: 15px 10px;
+            border: 2;
+            outline: none;
+            border-radius:  5px; ;
+            text-align: center;
+        }
+        .login button{
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 10px 15px ;
+            width: 50%;
+            border-radius: 5px;
+            border: 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/" ><em>HOME</em></a></li>
+                <li><a href="/practice"><em>SIGN UP</em></a></li>
+                <li><a href="/" ><em>ABOUT US</em></a></li>
+                <li><a href="adlog" ><em>ADMIN</em></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="login">
+        <h1>LOG IN HERE</h1>
+        <h3>{{errormsg}}</h3>
+        <form action="/flogin" method="post">
+            <p>USER NAME</p>
+            <input type="text" name="fullname" class="form-control" placeholder="user name" required="required">
+            <p>PASSWORS</p>
+            <input type="password" name="pass" placeholder="password" class="form-control">
+            <button type="submit">LOGIN!</button>
+        </form>
+    </div>
+</body>
+</html>

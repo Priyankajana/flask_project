@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT VIEW</title>
+    <link href="{{url_for('static',filename='images/nav.png')}}" rel="icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300;400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            outline: 0;
+        }
+
+        body {
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            opacity: 0.9;
+           background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e940a0e0-3436-40f8-8a7d-2771ca324d9a/dcaicut-34270a2a-3448-431d-b501-8564c178c5ff.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2U5NDBhMGUwLTM0MzYtNDBmOC04YTdkLTI3NzFjYTMyNGQ5YVwvZGNhaWN1dC0zNDI3MGEyYS0zNDQ4LTQzMWQtYjUwMS04NTY0YzE3OGM1ZmYuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.yHo57m3NoXc0VIPQzVsmw99KylyezngsCvzuqhNunTw');
+           background-size: cover;
+        }
+
+        .navbar {
+            background-color: rgba(43, 110, 235, 0.918);
+            border-radius: 10px;
+        }
+
+        .navbar ul {
+            overflow: auto;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 5px 5px;
+            padding-top: 2px;
+        }
+
+        .navbar li a {
+            padding: 2px 110px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .navbar li a:hover {
+            color: rgb(7, 9, 12);
+        }
+
+        table {
+            position: absolute;
+            z-index: 2;
+            left: 50%;
+            bottom: -359px;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border-radius: 12px 12px 0 0;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(32, 32, 32, .3);
+            background: #fff2f2d2;
+            text-align: center;
+        }
+
+        th,
+        td {
+            padding: -10% 15px;
+        }
+
+        th {
+            background: #4a75d3;
+            text-transform: uppercase;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        td {
+            font-family: 'Open sans', sans-serif;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #eeeeee;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="filter">
+
+    </div>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/adminhome"><em>HOME</em></a></li>
+                <li><a href="/viewall"><em>VIEW ALL</em></a></li>
+                <li><a href="#"><em>DELETE</em></a></li>
+                <li><a href="/logout"><em>LOG OUT</em></a></li>
+                <li><a href="#"><em>SEARCH</em></a></li>
+            </ul>
+        </nav>
+    </header>
+    <h2 style="text-align: center;">ALL CONTACT DETAILS</h2>
+
+    <div align="center">
+        <table>
+            <tr>
+                <th> Name </th>
+                <th> Email </th>
+                <th> Details </th>
+                <th> Date</th>
+                <th> Action </th>
+            </tr>
+            <h4 style="text-align: center;">{% for uobj in userdata %}</h4>
+            <tr>
+                <td> {{ uobj['username'] }} </td>
+                <td> {{ uobj['useremail'] }} </td>
+                <td> {{ uobj['usertext'] }} </td>
+                <th>{{uobj['regdate'] }}</th>
+                <td>
+                    <form action="/delete6" method="post">
+                        <input type="hidden" name="email" value="{{ uobj['useremail'] }}">
+                        <input style="background-color: rgba(243, 118, 139, 0.644); font-family: 'poppins',sans-serif;"
+                            type="submit" value="DELETE" class="btn btn-danger">
+                    </form>
+                </td>
+            </tr>
+            <h4 style="text-align: center;">{% endfor %}</h4>
+            <table>
+
+</body>
+
+</html>

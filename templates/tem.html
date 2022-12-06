@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEAM MEMBERS</title>
+    <link href="{{url_for('static',filename='images/nav.png')}}" rel="icon">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+        integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/1da285812a.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+
+        * {
+            margin-top: 0;
+            padding: 0;
+            
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background: #161623;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.918);
+            border-radius: 10px;
+        }
+
+        .navbar ul {
+            overflow: auto;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 5px 5px;
+            padding-top: 2px;
+        }
+
+        .navbar li a {
+            padding: 2px 110px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .navbar li a:hover {
+            color: rgb(126, 32, 113);
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#f00, #f0f);
+            clip-path: circle(30% at right 70%);
+        }
+
+        section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#2196f3, #e91e63);
+            clip-path: circle(20% at 10% 70%);
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .container .card {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            margin: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .container .card .content {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0.5;
+            transition: 0.5s;
+        }
+
+        .container .card:hover .content {
+            opacity: 1;
+            transform: translateY(-20px);
+        }
+
+        .container .card .content .imgbx {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 10px solid rgba(0, 0, 0, 0.25);
+        }
+
+        .container .card .content .imgbx img {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .container .card .content .contentbx h3 {
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            font-size: 18px;
+            text-align: center;
+            margin: 20px 0 10px;
+            line-height: 1.1em;
+        }
+
+        .container .card .content .contentbx h3 span {
+            font-size: 12px;
+            font-weight: 300;
+            text-transform: initial;
+        }
+
+        .container .card .sci {
+            position: absolute;
+            bottom: 50px;
+            display: flex;
+        }
+
+        .container .card .sci li {
+            list-style: none;
+            margin: 0 10px;
+            transform: translateY(40px);
+            opacity: 0;
+            transition: 0.5s;
+            transition-delay: calc(0.1s * var(--i));
+        }
+
+        .container .card:hover .sci li {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+
+        .container .card .sci li a {
+            color: #fff;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/" target="_blank"><em>HOME</em></a></li>
+                <li><a href="/practice" target="_blank"><em>SIGN UP</em></a></li>
+                <li><a href="/"><em>ABOUT US</em></a></li>
+                <li><a href="/contact"><em>CONTACT US</em></a></li>
+                <li><a href="/adlog"><em>ADMIN</em></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="container">
+            <div class="card">
+                <div class="content">
+                    <div class="imgbx">
+                        <img src="{{url_for('static',filename='images/sagnik2.jpg')}}" width="250" height="200">
+                    </div>
+                    <div class="contentbx">
+                        <h3>SAGNIK SAHOO<br><span>CREATIVE DESIGNER</span></h3>
+                    </div>
+                </div>
+                <ul class="sci">
+                    <li style="--i:1">
+                        <a href=""><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <div class="imgbx">
+                        <img src="{{url_for('static',filename='images/bantu.jpg')}}" width="250" height="200">
+                    </div>
+                    <div class="contentbx">
+                        <h3>SOUYMODIP DAS<br><span>PYTHON DEVLOPER</span></h3>
+                    </div>
+                </div>
+                <ul class="sci">
+                    <li style="--i:1">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <div class="imgbx">
+                        <img src="{{url_for('static',filename='images/team3.jpeg')}}" width="250" height="200">
+                    </div>
+                    <div class="contentbx">
+                        <h3>PRIYANKA JANA<br><span>FLASK DEVLOPER</span></h3>
+                    </div>
+                </div>
+                <ul class="sci">
+                    <li style="--i:1">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li style="--i:2">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li style="--i:3">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li style="--i:4">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </li>
+                </ul>
+    </section>
+</body>
+
+</html>

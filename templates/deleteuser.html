@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="Chandan Mukherjee">
+  <meta name="Keywords" content="Delete">
+  <meta name="Description" content="Admin Delete Page">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+  <title>Admin DELETE</title>
+  <link href="{{url_for('static',filename='images/nav.png')}}" rel="icon">
+  <style>
+     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  opacity: 0.9;
+  background: rgba(0, 0, 0, 0.76);
+  background: url(../static/images/delete1.jpg);
+  background-size: cover;
+  
+}
+
+.navbar {
+  background-color: rgba(27, 171, 228, 0.685);
+  border-radius: 10px;
+}
+
+.navbar ul {
+  overflow: auto;
+}
+
+.navbar li {
+  float: left;
+  list-style: none;
+  margin: 5px 5px;
+  padding-top: 2px;
+}
+
+.navbar li a {
+  padding: 3px 110px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.navbar li a:hover {
+  color: rgb(7, 9, 12);
+}
+
+.contact {
+        position: relative;
+        min-height: 100vh;
+        padding: 40px 50px;
+        display: ruby;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        
+    }
+
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .contact .contactform {
+        width: 40%;
+        padding: 40px;
+        background: rgba(107, 217, 245, 0.459);
+    }
+    .contact .contactform p{
+        text-align: center;
+        color: #fff;
+    }
+
+    .contact .contactform h2 {
+        font-size: 30px;
+        color: rgb(255, 255, 255);
+        font-weight: 500;
+    }
+
+    .contactform .inputbox {
+        position: relative;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .contactform .inputbox input,
+    .contactform .inputbox textarea {
+        width: 100%;
+        padding: 5px 0;
+        font-size: 16px;
+        margin: 10px 0;
+        border: none;
+        border-bottom: 2px solid #333;
+        outline: none;
+        resize: none;
+    }
+
+    .contactform .inputbox span {
+        position: absolute;
+        left: 0;
+        padding: 5px 0;
+        font-size: 16px;
+        margin: 10px 0;
+        pointer-events: none;
+        transition: 0.5s;
+        color: rgba(41, 91, 110, 0.918);
+    }
+
+    .contactform .inputbox input:focus~span,
+    .contactform .inputbox input:valid~span,
+    .contactform .inputbox textarea:focus~span,
+    .contactform .inputbox textarea:valid~span {
+        color: #e91e63;
+        font-size: 12px;
+        transform: translateY(-20px);
+    }
+
+    .contactform .inputbox input[type="submit"] {
+        width: 100px;
+        background: #57afbbbb;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .contactform .inputbox select[type="select"] {
+        width: 220px;
+        background: #2f6b74b7;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="/adminhome"><em>HOME</em></a></li>
+        <li><a href="/viewall"><em>VIEW ALL</em></a></li>
+        <li><a href="/search"><em>SEARCH</em></a></li>
+        <li><a href="/delete"><em>DELETE</em></a></li>
+        <li><a href="/logout"><em>LOGOUT</em></a></li>
+      </ul>
+    </nav>
+  </header>
+  <br />
+  <br />
+  <section class="contact">
+    <div class="container">
+      <div class="contactform">
+        <div>
+          <h5 style="color:red" >
+            <b> {{ msg }} </b>
+          </h5>
+        </div>
+
+        <form action="/delete" method="post">
+          <h2 style="color: #e91e63;">DELETE USER</h2>
+          <div class="form-group">
+            <label for="email" class="fw-bold text-uppercase text-primary"><h3 style="color: rgb(255, 255, 255);">Email Id *</h3></label>
+            <input type="email" name="email" class="form-control" placeholder="Enter Email Id">
+          </div>
+
+          <br />
+
+          <input type="submit" class="btn btn-success btn-block" value="DELETE">
+        </form>
+
+      </div> <!-- Card Body End -->
+    </div> <!-- Card End -->
+  </section>
+</body>
+
+</html>

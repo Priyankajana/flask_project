@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIEW</title>
+    <link href="{{url_for('static',filename='images/nav.png')}}" rel="icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300;400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            outline: 0;
+        }
+
+        body {
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            opacity: 0.9;
+            background: url('https://wallpapercave.com/wp/wp2757847.gif');
+            background-size: cover;
+        }
+
+        .navbar {
+            background-color: rgba(54, 54, 54, 0.918);
+            border-radius: 10px;
+        }
+
+        .navbar ul {
+            overflow: auto;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 5px 5px;
+            padding-top: 2px;
+        }
+
+        .navbar li a {
+            padding: 2px 110px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .navbar li a:hover {
+            color: rgb(7, 9, 12);
+        }
+
+        table {
+            position: absolute;
+            z-index: 2;
+            left: 50%;
+            bottom: -500px;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border-radius: 12px 12px 0 0;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(32, 32, 32, .3);
+            background: #fff2f2d2;
+            text-align: center;
+        }
+
+        th,
+        td {
+            padding: -10% 15px;
+            text-decoration: #e91e63;
+        }
+
+        th {
+            background: #f02e37;
+            text-transform: uppercase;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        td {
+            font-family: 'Open sans', sans-serif;
+            text-shadow: #e91e63;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #eeeeee;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="filter">
+
+    </div>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/adminhome"><em>HOME</em></a></li>
+                <li><a href="/viewall"><em>VIEW ALL</em></a></li>
+                <li><a href="/delete"><em>DELETE</em></a></li>
+                <li><a href="/logout"><em>LOG OUT</em></a></li>
+                <li><a href="/search"><em>SEARCH</em></a></li>
+            </ul>
+        </nav>
+    </header>
+    <h2 style="text-align: center;">ALL USER DETAILS</h2>
+
+    <div align="center">
+        <table>
+            <tr>
+                <th> Name </th>
+                <th> Email </th>
+                <th> Mobile </th>
+                <th> Job </th>
+                <th> Date</th>
+                <th>ACTION</th>
+            </tr>
+            <h4 style="text-align: center;">{% for uobj in userdata %}</h4>
+            <tr>
+                <td> {{ uobj['username'] }} </td>
+                <td> {{ uobj['useremail'] }} </td>
+                <td> {{ uobj['usermobile'] }} </td>
+                <td> {{ uobj['userjob'] }} </td>
+                <td> {{ uobj['regdate'] }}</td>
+                <td>
+                    <form action="/delete1" method="post">
+                        <input type="hidden" name="email" value="{{ uobj['useremail'] }}">
+                        <input style="background-color: rgba(243, 118, 139, 0.644); font-family: 'poppins',sans-serif;"
+                            type="submit" value="DELETE" class="btn btn-danger">
+                    </form>
+                </td>
+            </tr>
+            <h4 style="text-align: center;">{% endfor %}</h4>
+            <table>
+
+                <footer>
+                    <h4 style="text-align: center;"><a href="conv"><b style="color: white;">CONTACT DETAILS</b></a></h4>
+                </footer>
+</body>
+
+</html>

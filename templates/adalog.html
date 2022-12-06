@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELSOME ADMIN</title>
+    <link href="{{url_for('static',filename='images/nav.png')}}" rel="icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins',sans-serif;
+        }
+        body{
+            background: rgb(241, 235, 235);
+            min-height: 200vh;
+        }
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.6s;
+            padding: 40px 100px;
+            z-index: 100000; 
+        }
+        header.sticky{
+            padding: 5px 100px;
+            background: #fff; 
+        }
+        header .logo{
+            position: relative;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            font-size: 2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.06s;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header ul li{
+            position: relative;
+            list-style: none;
+        }
+        header ul li a{
+            position: relative;
+            margin: 0  15px;
+            text-decoration: none;
+            color: #fff;
+            letter-spacing: 2px;
+            font-weight: 500px;
+            transition: 0.06s
+        }
+        .banner{
+            position: relative;
+            width:100%;
+            height: 100vh;
+            background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4402564f-09d3-4d83-9537-e8ea0e3658af/ddxqu15-6554796f-5c81-4a81-83d9-3b0d9fe83efc.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQ0MDI1NjRmLTA5ZDMtNGQ4My05NTM3LWU4ZWEwZTM2NThhZlwvZGR4cXUxNS02NTU0Nzk2Zi01YzgxLTRhODEtODNkOS0zYjBkOWZlODNlZmMuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.2MdLAflQ5gJObwU5BVTX93snV62Og_3hCKXW98KqPf4);
+            background-size: cover;
+        }
+        header.sticky .logo,
+        header.sticky ul li a{
+            color: #000;
+        }
+        .container .h3{
+            text-align: center;
+            text-decoration-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="/" class="logo">ADMIN</a>
+        <ul>
+            <li><a href="/adminhome">HOME</a></li>
+            <li><a href="/viewall">VIEW ALL</a></li>
+            <li><a href="search">SEARCH</a></li>
+            <li><a href="/delete">DELETE</a></li>
+            <li><a href="/adminviewallimg">VIEW IMAGE</a></li>
+            <li><a href="/logout">LOG OUT</a></li>   
+        </ul>
+    </header>
+    <section class="banner"></section>
+    <div class="container" style="text-align: center;">
+        <br>
+        <h1 style="color: red;"> WELCOME ADMIN </h1>
+        <br>
+        <h2>THIS IS ADMIN DASHBOARD</h2>
+    </div>
+    <script type="text/javascript">
+     window.addEventListener("scroll",function(){
+         var header = document.querySelector("header");
+         header.classList.toggle("sticky",window.scrollY > 0);
+     })
+    </script>
+</body>
+
+</html>

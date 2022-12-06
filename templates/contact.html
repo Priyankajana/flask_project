@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact us</title>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+        integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+        <link href="{{url_for('static',filename='images/nav.png')}}" rel="icon">
+        <script src="https://kit.fontawesome.com/1da285812a.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300;400&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins',sans-serif;
+        }
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.685);
+            border-radius: 10px;
+        }
+
+        .navbar ul {
+            overflow: auto;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 5px 5px;
+            padding-top: 2px;
+        }
+
+        .navbar li a {
+            padding: 3px 110px;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+
+        .navbar li a:hover {
+            color: rgb(7, 9, 12);
+        }
+
+        .contact{
+            position: relative;
+            min-height: 100vh;
+            padding: 50px 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: url(../static/images/contact.jpg);
+            background-size: cover;
+        }
+        .contact .content{
+            max-width: 800px;
+            text-align: center;
+        }
+        .contact .content h2{
+            font-size: 36px;
+            font-weight: 500;
+            color: #fff;
+        }
+        .contact .content p{
+            font-weight: 300;
+            color: #fff;
+        }
+        .container{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .container .contactinfo{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+        .container .contactinfo .box{
+            position: relative;
+            padding: 20px 0;
+            display: flex;
+        }
+        .container .contactinfo .box .icon{
+            min-width: 60px;
+            height: 60px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 22px;
+        }
+        .container .contactinfo .box .text{
+            display: flex;
+            margin-left: 20px;
+            font-size: 16px;
+            color: #fff;
+            flex-direction: column;
+            font-weight: 300;
+        }
+        .container .contactinfo .box .text h3{
+            font-weight: 500;
+            color: #00bcd4;
+        }
+        .contactform{
+            width: 40%;
+            padding: 40px;
+            background: #fff;
+        }
+        .contactform h2{
+            font-size: 30px;
+            color: #333;
+            font-weight: 500;
+        }
+        .contactform .inputbox{
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .contactform .inputbox input,
+        .contactform .inputbox textarea{
+            width: 100%;
+            padding: 5px 0;
+            font-size: 16px;
+            margin: 10px 0;
+            border: none;
+            border-bottom: 2px solid #333;
+            outline: none;
+            resize: none;
+        }
+        .contactform .inputbox span{
+            position: absolute;
+            left: 0;
+            padding: 5px 0;
+            font-size: 16px;
+            margin: 10px 0;
+            pointer-events: none;
+            transition: 0.5s;
+            color: #666;
+        }
+        .contactform .inputbox input:focus ~ span,
+        .contactform .inputbox input:valid ~ span,
+        .contactform .inputbox textarea:focus ~ span,
+        .contactform .inputbox textarea:valid ~ span{
+            color: #e91e63;
+            font-size: 12px;
+            transform: translateY(-20px);
+        }
+        .contactform .inputbox input[type="submit"]{
+            width: 100px;
+            background: #00bcd4;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+
+        @media (max-width: 991px){
+            .contact{
+                padding: 50px;
+            }
+            .container{
+                flex-direction: column;
+            }
+            .container .contactinfo{
+                margin-bottom: 40px;
+            }
+            .container .contactinfo,
+            .contactform
+            {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/"><em>HOME</em></a></li>
+                <li><a href="/"><em>ABOUT US</em></a></li>
+                <li><a href="/practice"><em>SIGN UP</em></a></li>
+                <li><a href="/flogin"><em>LOG IN</em></a></li>
+                <li><a href="/userallviewimage"><em>GALLERY</em></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="contact">
+        <div class="content">
+            <h2>CONTACT US</h2>
+            <P>HI WE THE EMPLOYEES OF PGALLERY WE ARE HERE FOR 24*7
+                IF YOU WANT ANY KIND OF HELP DO NOT HEGITATE TO CONTACT WITH US.
+            </P>
+        </div>
+        <div class="container">
+            <div class="contactinfo">
+                <div class="box">
+                    <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>Kolkata New Garia,<br>Kavi Subhas metro station,pancesor police station,<br>PIN-7000094</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>+917001666657</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>sagniksahoo987@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactform">
+                <form action="/contact" method="post">
+                    <h2>SEND MESSAGE</h2>
+                    <h3>{{msg}}</h3>
+                    <div class="inputbox">
+                        <input type="text" name="fullname"  required="required" class="form-control">
+                        <span>FULL NAME</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" name="email"  required="required" class="form-control">
+                        <span>EMAIL</span>
+                    </div>
+                    <div class="inputbox">
+                        <textarea name="alltext"  required="required"  class="form-control"></textarea>
+                        <span>TYPE YOUR TEXT</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="submit" name="#" value="send">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

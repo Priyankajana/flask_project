@@ -1,0 +1,170 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>admin log in</title>
+    <link href="{{url_for('static',filename='images/nav.png')}}" rel="icon">
+</head>
+<style>
+    body {
+        background-color: #F3EBF6;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    .navbar{
+            background-color: rgba(138, 42, 122, 0.918);
+            border-radius: 10px;
+        }
+        .navbar ul{
+            overflow: auto;
+        }
+        .navbar li{
+            float: left;
+            list-style: none;
+            margin: 5px 5px;
+            padding-top: 2px;
+        }
+        .navbar li a{
+            padding: 2px 100px;
+            text-decoration: none;
+            color:white;
+        }
+        .navbar li a:hover{
+            color: rgb(32, 126, 121);
+        }
+
+    .main {
+        background-color: #FFFFFF;
+        width: 400px;
+        height: 400px;
+        margin: 7em auto;
+        border-radius: 1.5em;
+        box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    }
+    .main h3{
+        text-align: center;
+    }
+
+    .sign {
+        padding-top: 40px;
+        color: #8C55AA;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: bold;
+        font-size: 23px;
+    }
+
+    .form-control {
+        width: 76%;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0, 0.02);
+        margin-bottom: 50px;
+        margin-left: 46px;
+        text-align: center;
+        margin-bottom: 27px;
+        font-family: 'Ubuntu', sans-serif;
+    }
+
+    form.form1 {
+        padding-top: 40px;
+    }
+
+    .form-control {
+        width: 76%;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0, 0.02);
+        margin-bottom: 50px;
+        margin-left: 46px;
+        text-align: center;
+        margin-bottom: 27px;
+        font-family: 'Ubuntu', sans-serif;
+    }
+
+
+    .form-control:focus,
+    .form-control:focus {
+        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+
+    }
+
+    .btn-btn-danger-btn-block {
+        cursor: pointer;
+        border-radius: 5em;
+        color: #fff;
+        background: linear-gradient(to right, #9C27B0, #E040FB);
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: 'Ubuntu', sans-serif;
+        margin-left: 35%;
+        font-size: 13px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    }
+
+    .forgot {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color: #E1BEE7;
+        padding-top: 15px;
+    }
+
+    a {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color: #E1BEE7;
+        text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+        .main {
+            border-radius: 0px;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/" ><em>HOME</em></a></li>
+                <li><a href="practice" ><em>SIGN UP</em></a></li>
+                <li><a href="/" ><em>ABOUT US</em></a></li>
+                <li><a href="#" ><em>CONTACT US</em></a></li>
+                <li><a href="/flogin" ><em>LOGIN</em></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main">
+        <p class="sign" align="center">ADMIN LOGIN</p>
+        <h3>{{msg}}</h3>
+        <form action="/adlog" method="POST" class="form1">
+            <input class="form-control" type="text" name="adminuserid" align="center" placeholder="Username">
+            <input class="form-control" type="password" name="adminpassword" align="center" placeholder="Password">
+            <input type="submit" class="btn-btn-danger-btn-block" value="LOGIN">
+            <p class="forgot" align="center"><a href="#">Forgot Password?</p>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update account</title>
+    <link href="{{url_for('static',filename='images/nav.png')}}" rel="icon">
+    <script src="harry.js"></script>
+    <style>
+         .navbar{
+            background-color:rgb(19, 99, 247);
+            border-radius: 12px; 
+         }
+         .navbar ul{
+             overflow: auto;
+         }
+         .navbar li{
+             float: left;
+             list-style: none;
+             margin: -4px 100px;
+             padding-top: 4px;
+         } 
+         .navbar li a{
+             padding: 3px 3px;
+             text-decoration:cornsilk;
+             color: white; 
+         }
+         .navbar li a:hover{
+             color: crimson;
+         }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/ualog"><b>HOME</b></a></li>
+                <li><a href="/"><b>ABOUT</b></a></li>
+                <li><a href="#"><b>CONTACT US</b></a></li>
+                <li><a href="/logout"><b>LOG IN</b></a></li>
+                <li><a href="adlog"><b>ADMIN</b></a></li>
+            </ul>
+        </nav>
+    </header>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+
+    <div class="container">
+        <br>
+        <p class="text-center">&dollar;copy right by sagnik sahoo and team &copy;</p>
+        <hr>
+
+
+
+
+
+        <div class="card bg-light">
+            <article class="card-body mx-auto" style="max-width: 400px;">
+                <h4 class="card-title mt-3 text-center">UPDATE ACCOUNT</h4>
+                <p class="text-center">Get started with your  account</p>
+                <p class="divider-text">
+                    <span class="bg-light"></span>
+                </p>
+                <form action="/updateuserprofile1" method="POST">
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                        </div>
+                        <input type="text" name="fullname" onblur="checkname() " class="form-control"
+                        value= "{{ userdata['username'] }}" type="text" readonly>
+                        <div class="text-danger font-weight-bold" id="nameerrormessage"></div>
+                    </div> <!-- form-group// -->
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                        </div>
+                        <input name="email" class="form-control"  type="email" value="{{ userdata['useremail'] }}" readonly>
+                    </div> <!-- form-group// -->
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                        </div>
+                        <select class="custom-select" style="max-width: 120px;" required>
+                            <option selected="">+91</option>
+                            <option value="1">+1</option>
+                            <option value="2">+198</option>
+                            <option value="3">+71</option>
+                            <option value="4">+01</option>
+                            <option value="5">+981</option>
+                            <option value="6">+081</option>
+                            <option value="7">+671</option>
+                            <option value="8">+651</option>
+                            <option value="9">+451</option>
+                            <option value="10">+401</option>
+                            <option value="11">+7</option>
+                        </select>
+                        <input name="mobile" class="form-control" placeholder="Phone number" type="text" value="{{ userdata['usermobile'] }}" required>
+                    </div> <!-- form-group// -->
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+                        </div>
+                        <select name="job" class="form-control" value="{{ userdata['userjob'] }} " required="required" >
+                            <option selected=""> Select job type</option>
+                            <option>Designer</option>
+                            <option>Manager</option>
+                            <option>Accaunting</option>
+                            <option>Student</option>
+                            <option>Doctor</option>
+                            <option>Teacher</option>
+                            <option>Entrepreneur</option>
+                        </select>
+                    </div> <!-- form-group end.// -->
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+                        <input type="password" value="{{ userdata['userpass'] }}" name="pass" autocomplete="off" class="form-control" placeholder="Create password"  required="required">
+                    </div> <!-- form-group// -->
+                    <div class="form-group">
+                        <input style="text-align: center;" type="submit" class="btn btn-primary" value="UPDATE PROFILE">
+                    </div> <!-- form-group// -->
+                </form>
+            </article>
+        </div> <!-- card.// -->
+
+    </div>
+    <!--container end.//-->
+
+    <br><br>
+    <hr>
+    <p>
+    <h4></h4>
+    </p>
+    <hr>
+</body>
+
+</html>
